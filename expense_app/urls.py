@@ -7,6 +7,7 @@ admin.site.site_header = 'Expense Super Admin' # this will change django admin t
 
 urlpatterns = [
 	url(r'^signup/$', views.signup, name='signup'),
+	url(r'^user_profile/$', views.user_profile, name='user_profile'),
 ]
 
 if settings.ADMIN_ENABLED:
