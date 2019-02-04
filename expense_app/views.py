@@ -26,13 +26,12 @@ def user_profile(request):
 
         if user1 == request.user.username :
             print("-----inside if")
-            messages.add_message(request, messages.INFO, 'Welcome, '+user.name)
+            messages.add_message(request, messages.INFO, 'Welcome, '+request.user.username)
             return render(request, 'expense_app_templates/user_profile.html')
             
     except Exception as e:
         print(e,"--------Exception error")
         messages.add_message(request, messages.INFO, 'User record not found')
-        return render(request, 'expense_app_templates/user_profile.html')
+        return redirect('signup')
             
-
     return render(request, 'expense_app_templates/user_profile.html')
